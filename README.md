@@ -78,7 +78,7 @@ This project is part of the overall evaluation of all students. This is done by 
 - Time off switching, gives negative points, team-point.
 
 # Barista API
-In this projects should you create an Fluent API for a [barista](https://en.wikipedia.org/wiki/Barista) to create espresso based drinks using code. An thought example of the API could be:
+In this projects should you create an Fluent API for a [barista](https://en.wikipedia.org/wiki/Barista) to create espresso based drinks using code. An example of how the API could look (this is pseudo-code!!):
 
 ```c#
 var smallEspresso = new Espresso().AddWater(20).AddBeans(b => b.AmountInG = 5 && b.Sort = CoffeSorts.Robusta).ToSmallCup();

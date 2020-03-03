@@ -5,6 +5,7 @@ For the procedures used in this project see : [Procedures](Procedures.md)
 In this projects should you create an Fluent API for a [barista](https://en.wikipedia.org/wiki/Barista) to create espresso based drinks using code. To get into the Barista domain have a look at [The Ultimate Beginner's Guide to Espresso](https://prima-coffee.com/learn/section/espresso) they also have a [A Beginner's Guide to Espresso](https://www.youtube.com/watch?v=-kd-zX-JOVU) video serie (5 parts).
 
 The API should be made for a barista-programmer, and he/she should be able to produce the following six cofee types using the API:
+
 ![Six coffee types](https://www.latteartguide.com/wp-content/uploads/2016/01/different-types-of-coffee-infograph.jpg)
 
 The final method of the API should return a beverage-object of the correct type, depending on the methods which have been executed.
@@ -26,6 +27,8 @@ IBeverage latte = new EspressoMachine()
                         .ToBeverage();
 // latte is type of Latte
 ```
+
+See the IBeverage in code project : [BaristaApi/Beverage.cs](BaristaApi/Beverage.cs)
 
 ## The solution 
 

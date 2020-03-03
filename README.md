@@ -78,50 +78,30 @@ This project is part of the overall evaluation of all students. This is done by 
 - Time off switching, gives negative points, team-point.
 
 # Barista API
-In this projects should you create an Fluent API for a [barista](https://en.wikipedia.org/wiki/Barista) to create espresso based drinks using code. An example of how the API could look (this is pseudo-code!!):
+In this projects should you create an Fluent API for a [barista](https://en.wikipedia.org/wiki/Barista) to create espresso based drinks using code. To get into the Barista domain have a look at [The Ultimate Beginner's Guide to Espresso](https://prima-coffee.com/learn/section/espresso) they also have a [A Beginner's Guide to Espresso](https://www.youtube.com/watch?v=-kd-zX-JOVU) video serie (5 parts).
+
+The API should be made for a barista-programmer, and he/she should be able to produce the following six cofee types using the API:
+![Six coffee types](https://www.latteartguide.com/wp-content/uploads/2016/01/different-types-of-coffee-infograph.jpg)
+
+The final method of the API should return a beverage-object of the correct type, depending on the methods which have been executed.
+
+An example of how the API could look (this is pseudo-code!!):
 
 ```c#
-IBravage brevrage = new Espresso().AddWater(20).AddBeans(b => b.AmountInG = 5 && b.Sort = CoffeSorts.Robusta).ToBravage();
-//bravage is type of Espresso
+IBeverage espresso = new EspressoMachine()
+                            .AddWater(20)
+                            .AddBeans(b => b.AmountInG = 5 && b.Sort = CoffeSorts.Robusta)
+                        .ToBeverage();
+// espresso is type of Espresso
+
+IBeverage latte = new EspressoMachine()
+                            .AddBeans(b => b.Sort = CoffeSorts.Robusta)
+                            .GrindBeans()
+                            .AddWater(20)
+                            .AddMilk()
+                        .ToBeverage();
+// latte is type of Latte
 ```
-
-
-
-
-
-```c#
-IBravage brevrage = new Espresso().AddWater(20).AddBeans(b => b.AmountInG = 7 && b.Sort = CoffeSorts.Robusta).AddMilk().ToBravage();
-//bravage is type of Latte
-```
-
-
-
-
-
-```C#
-interface IBravage{
-	string Ingredience {get; set; }
-    string CupType {get; set; }
-}
-
-class Espresso : IBravage{
-	
-}
-
-class Latte : IBravage{
-    
-}
-```
-
-
-
-![Coffee](https://i.pinimg.com/474x/f0/16/57/f01657c547416ccac3bf3f3577b04910--coffee-cafe-coffee-shops.jpg)
-
-
-
-
-
-It's up to you how the output should be presented to the user.
 
 ## The solution 
 
@@ -134,27 +114,4 @@ The solution should cover the following:
 Extra
 
 - The usage of attributes
-
-## An alternative (but more or less the same)
-
-Instead of a braista you could also have a coffee automat in mind, this Krups EA800540 could be used as an example.
-[Review video](https://www.youtube.com/watch?v=pcDvSwqWUbc)
-
-[Instruction manual](https://www.krups.co.uk/medias/?context=bWFzdGVyfHJvb3R8MzU0ODA0OXxhcHBsaWNhdGlvbi9wZGZ8aGU3L2g4ZS8xMjU0MzI2NjQyMjgxNC5wZGZ8MTJmMWFkODFjYzc3ZTg4NDdjYzViNDE5NjVmYzhiMTM5OTAzOTg1M2UzZGE1NDYwNzgzYjQ2MDE2ZjgxM2FhMg)
-
-
-
-
-![Cofee automat, source: https://i.pinimg.com/originals/60/d2/49/60d249fd0e3963eb7e8894a32852f970.jpg](coffeeautomat.jpg)
-
-
-
-- 
-
-  
-
-
-
-
-
 

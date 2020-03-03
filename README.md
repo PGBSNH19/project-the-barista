@@ -13,13 +13,13 @@ The final method of the API should return a beverage-object of the correct type,
 An example of how the API could look (this is pseudo-code!!):
 
 ```c#
-IBeverage espresso = new EspressoMachine()
+IBeverage espresso = new FluentEspresso()
                             .AddWater(20)
                             .AddBeans(b => b.AmountInG = 5 && b.Sort = CoffeSorts.Robusta)
                         .ToBeverage();
 // espresso is type of Espresso
 
-IBeverage latte = new EspressoMachine()
+IBeverage latte = new FluentEspresso()
                             .AddBeans(b => b.Sort = CoffeSorts.Robusta)
                             .GrindBeans()
                             .AddWater(20)

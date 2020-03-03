@@ -81,10 +81,45 @@ This project is part of the overall evaluation of all students. This is done by 
 In this projects should you create an Fluent API for a [barista](https://en.wikipedia.org/wiki/Barista) to create espresso based drinks using code. An example of how the API could look (this is pseudo-code!!):
 
 ```c#
-var smallEspresso = new Espresso().AddWater(20).AddBeans(b => b.AmountInG = 5 && b.Sort = CoffeSorts.Robusta).ToSmallCup();
+IBravage brevrage = new Espresso().AddWater(20).AddBeans(b => b.AmountInG = 5 && b.Sort = CoffeSorts.Robusta).ToBravage();
+//bravage is type of Espresso
 ```
 
+
+
+
+
+```c#
+IBravage brevrage = new Espresso().AddWater(20).AddBeans(b => b.AmountInG = 7 && b.Sort = CoffeSorts.Robusta).AddMilk().ToBravage();
+//bravage is type of Latte
+```
+
+
+
+
+
+```C#
+interface IBravage{
+	string Ingredience {get; set; }
+    string CupType {get; set; }
+}
+
+class Espresso : IBravage{
+	
+}
+
+class Latte : IBravage{
+    
+}
+```
+
+
+
 ![Coffee](https://i.pinimg.com/474x/f0/16/57/f01657c547416ccac3bf3f3577b04910--coffee-cafe-coffee-shops.jpg)
+
+
+
+
 
 It's up to you how the output should be presented to the user.
 

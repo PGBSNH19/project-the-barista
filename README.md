@@ -15,15 +15,21 @@ An example of how the API could look (this is pseudo-code!!):
 ```c#
 IBeverage espresso = new FluentEspresso()
                             .AddWater(20)
-                            .AddBeans(b => b.AmountInG = 5 && b.Sort = CoffeSorts.Robusta)
+                            .AddBeans(new Bean(){ 
+                                AmountInG = 5,
+                                Sort = CoffeSorts.Robusta})
+    						.Validate(e => e.Temerature > 90)
                         .ToBeverage();
 // espresso is type of Espresso
 
 IBeverage latte = new FluentEspresso()
-                            .AddBeans(b => b.Sort = CoffeSorts.Robusta)
+                            .AddBeans(new Bean(){ 
+                                AmountInG = 5,
+                                Sort = CoffeSorts.Robusta})
                             .GrindBeans()
                             .AddWater(20)
                             .AddMilk()
+       						.Validate(e => e.Temerature > 90)
                         .ToBeverage();
 // latte is type of Latte
 ```

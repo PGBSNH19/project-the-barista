@@ -29,7 +29,7 @@ IBeverage latte = new FluentEspresso()
                             .GrindBeans()
                             .AddWater(20)
                             .AddMilk()
-       						.Validate(e => e.Temerature > 90)
+       						.Validate(e => e.Temerature < 80)
                         .ToBeverage();
 // latte is type of Latte
 ```
